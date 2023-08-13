@@ -1,0 +1,271 @@
+@import "_functions.scss";
+@import "_media-queries.scss";
+
+.btn {
+  user-select: none;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  text-align: center;
+  display: inline-block;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  border: 0;
+  text-transform: uppercase;
+  background: #9a762d;
+  color: #fff;
+  font-weight: 600;
+  font-size: em(16);
+  padding: em(19) em(5);
+  min-width: 200px;
+  &:hover {
+    color: #fff;
+    background: #caa94f;
+    &:active {
+      color: #fff;
+      background: #d49e09;
+    }
+  }
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  &.btn-empty {
+    &:hover {
+      &:active {
+      }
+    }
+  }
+}
+
+textarea {
+  resize: vertical;
+  min-height: em(85);
+}
+input,
+textarea,
+select {
+  width: 100%;
+  transition: border 0.3s ease;
+  appearance: none;
+  border: 0;
+  border-bottom: 1px solid #e0e0e0;
+  padding: em(18) 0;
+  background: transparent;
+  color: #000;
+  font-size: em(16);
+  $placeholder_color: #bdbdbd;
+  &:focus {
+    border-color: #9a762d;
+  }
+  &[type="date"] {
+    appearance: unset;
+    // background: url(../img/calendar.svg) right 19px top 55% / 14px no-repeat;
+    // &::-webkit-calendar-picker-indicator {
+    //     opacity: 0;
+    // }
+  }
+  &[type="number"] {
+    -moz-appearance: textfield;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      display: none;
+      margin: 0;
+    }
+  }
+  &::-webkit-input-placeholder {
+    color: $placeholder_color;
+  }
+  &::-moz-placeholder {
+    color: $placeholder_color;
+  }
+  &:-ms-input-placeholder {
+    color: $placeholder_color;
+  }
+  &:-moz-placeholder {
+    color: $placeholder_color;
+  }
+  &[readonly] {
+    cursor: not-allowed;
+  }
+  &[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 2px;
+    border-color: #b8b8b8;
+    padding: 0;
+    &:after {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 5px;
+      left: 4px;
+      width: 7px;
+      height: 6px;
+      opacity: 0;
+      transition: all 0.3s ease;
+      background: url(../img/check.svg) center / contain no-repeat;
+    }
+    &:checked {
+      &:after {
+        opacity: 1;
+      }
+    }
+    &.switch {
+      width: 30px;
+      height: 20px;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      background: #b8b8b8;
+      border: 0;
+      &:after {
+        top: 2px;
+        left: 2px;
+        border-radius: 100%;
+        background: #fff;
+        opacity: 1;
+        width: 16px;
+        height: 16px;
+      }
+      &:checked {
+        background: #00be13;
+        &:after {
+          transform: translateX(10px);
+        }
+      }
+    }
+  }
+  &[type="radio"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 100%;
+    border-color: #b8b8b8;
+    padding: 0;
+    &:after {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 4px;
+      left: 4px;
+      width: 6px;
+      height: 6px;
+      opacity: 0;
+      border-radius: 100%;
+      transition: all 0.3s ease;
+      background: #b8b8b8;
+    }
+    &:checked {
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+select {
+  appearance: unset;
+  // background: #fff url(../img/arrow.svg) right 7px top 55%/14px no-repeat;
+  cursor: pointer;
+}
+
+form.check-validation {
+  input,
+  textarea,
+  select {
+    &:invalid {
+      border-color: #ed1c24;
+    }
+  }
+}
+
+form {
+  input,
+  textarea,
+  select {
+    margin-bottom: 10px;
+  }
+}
+
+.modalq-wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 15px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 9999;
+  display: none;
+  .modalq {
+    display: none;
+    position: relative;
+    background: #fff;
+    padding: 30px;
+    width: 100%;
+    max-height: calc(var(--vh, 100vh) - 30px);
+    max-width: em(550);
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+    @media (max-width: 1023px) {
+      height: auto;
+    }
+    svg[data-modalq-close] {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      user-select: none;
+      padding: 0;
+      width: auto;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: em(460);
+      margin: 0 auto;
+      width: 100%;
+    }
+    .title {
+      font-size: em(30);
+      text-align: center;
+      font-weight: 500;
+      margin: 0 auto em(15, 30);
+      max-width: 500px;
+      @media (max-width: 767px) {
+        font-size: em(30);
+      }
+    }
+    & > svg {
+      width: 100%;
+      padding-bottom: 30px;
+      display: block;
+    }
+    &#modalq-0 {
+      & > div {
+        height: 100%;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        font-size: em(27);
+        font-weight: 500;
+        max-width: em(420, 27);
+        margin: 0 auto;
+        line-height: 130%;
+      }
+    }
+  }
+}
+
+[data-modalq-opener],
+[data-modalq-close] {
+  cursor: pointer;
+}

@@ -1,0 +1,126 @@
+@import "_functions.scss";
+@import "_media-queries.scss";
+
+section.seo-text {
+  font-size: em(16);
+  color: #000;
+  // letter-spacing: em(1);
+  font-family: inherit;
+  .readmore-content {
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+    & + .readmore {
+      margin: em(15) 0;
+      button {
+      }
+    }
+    &.active {
+      position: relative;
+      -webkit-line-clamp: unset;
+      display: block;
+      overflow: unset;
+      & + .readmore button {
+      }
+    }
+  }
+  video,
+  iframe {
+    margin: 0 auto;
+    display: block;
+  }
+  p {
+    margin-bottom: em(15, 16);
+    font-size: inherit;
+    letter-spacing: inherit;
+    font-family: inherit;
+    color: inherit;
+  }
+  &.indent {
+    h1 ~ p {
+      text-indent: 1.5em;
+    }
+  }
+  ul,
+  ol {
+    margin-bottom: em(5, 16);
+    font-size: inherit;
+    font-family: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+  }
+  ul {
+    list-style: inside disc;
+  }
+  ol {
+    list-style: inside decimal;
+  }
+  li {
+    margin-bottom: em(5, 16);
+    font-size: inherit;
+    font-family: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+  }
+  p *,
+  li * {
+    font-size: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    font-family: inherit;
+  }
+  a:not(.btn) {
+    text-decoration: underline;
+  }
+  a:not(.btn):hover {
+    text-decoration: none;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  h1 {
+    font-size: em(30, 16);
+    margin-bottom: em(10, 16);
+    margin-top: em(5, 16);
+  }
+  h2 {
+    font-size: em(28, 16);
+    margin-bottom: em(10, 16);
+    margin-top: em(5, 16);
+  }
+  h3 {
+    font-size: em(26, 16);
+    margin-bottom: em(10, 16);
+    margin-top: em(5, 16);
+  }
+  h4 {
+    font-size: em(24, 16);
+    margin-bottom: em(10, 16);
+    margin-top: em(5, 16);
+  }
+  h5 {
+    font-size: em(22, 16);
+    margin-bottom: em(10, 16);
+    margin-top: em(5, 16);
+  }
+  h6 {
+    font-size: em(20, 16);
+    margin-bottom: em(10, 16);
+    margin-top: em(5, 16);
+  }
+}
+
+section.page-404 {
+  text-align: center;
+  min-height: calc(var(--vh, 100vh));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+section.page-404 p {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
