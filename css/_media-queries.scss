@@ -173,6 +173,7 @@
       height: 2px;
       background-color: white;
       transform: translateY(-10px);
+      transition: all ease .4s;
       &::after {
         content: "";
         display: block;
@@ -188,6 +189,19 @@
         height: 2px;
         background-color: white;
         transform: translateY(-8px);
+      }
+    }
+    .active {
+      background-color: #B7B5B5;
+      transform: rotate(45deg);
+      &::after{
+        display: none;
+      }
+      &::before{
+        // position: absolute;
+        // top: -10px;
+        background-color: #B7B5B5;
+        transform: rotate(90deg);
       }
     }
     .wrapper {
