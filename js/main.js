@@ -322,3 +322,67 @@ $(document).ready(()=> {const wwt=1;function is_home(){return($('body').hasClass
     
 })
 
+
+
+function rearrange_One_level() {
+    const breakpoint = 768;
+    const container = document.querySelector('.one_level');
+    const blocks = container.querySelectorAll('div.build, div.bay');
+    const serviceBlock = container.querySelector('.servise');
+  
+    let wrapper = document.createElement('div');
+    wrapper.classList.add('wrapper');
+  
+    blocks.forEach(block => {
+      if (window.innerWidth < breakpoint) {
+        wrapper.appendChild(block);
+      } else {
+        container.insertBefore(wrapper, block);
+        wrapper = document.createElement('div');
+        wrapper.classList.add('wrapper');
+      }
+    });
+  
+    if (wrapper.childNodes.length > 0) {
+      container.appendChild(wrapper);
+    }
+  
+    if (window.innerWidth < breakpoint && serviceBlock) {
+      container.appendChild(serviceBlock);
+    }
+  }
+function rearrangeTwo_level() {
+    const breakpoint = 768;
+    const container = document.querySelector('.two_level');
+    const contactBlock = container.querySelector('.contact');
+    const adresBlock = container.querySelector('.adres');
+    const messengerBlock = container.querySelector('.messenger');
+    const socialBlock = container.querySelector('.social');
+    const cookieBlock = container.querySelector('.cookie');
+  
+    if (window.innerWidth < breakpoint) {
+      container.appendChild(contactBlock);
+      container.appendChild(adresBlock);
+      container.appendChild(messengerBlock);
+      container.appendChild(socialBlock);
+      container.appendChild(cookieBlock);
+    } else {
+      container.insertBefore(contactBlock, container.firstChild);
+      container.insertBefore(adresBlock, contactBlock.nextSibling);
+      container.insertBefore(messengerBlock, adresBlock.nextSibling);
+      container.insertBefore(socialBlock, messengerBlock.nextSibling);
+      container.appendChild(cookieBlock);
+    }
+  }
+
+window.addEventListener('load',()=>{
+    rearrange_One_level();
+    rearrangeTwo_level();
+});
+window.addEventListener('resize', ()=>{
+    if (window.innerWidt > 768)
+    rearrange_One_level();
+    rearrangeTwo_level();
+});
+  
+const screenWidth = window.innerWidth;
