@@ -6437,22 +6437,43 @@ window.addEventListener("resize", () => {
 });
 
 const imageListItems = document.querySelectorAll(".image-list li");
-const swiper = new Swiper(".examples-slider", {
+const swiperExamples = new Swiper(".examples-slider", {
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
   },
-  effect: 'fade',
+  effect: "fade",
   fadeEffect: {
-    crossFade: true
+    crossFade: true,
   },
 });
 
-imageListItems.forEach(item => {
-  item.addEventListener('click', function() {
-    const slideIndex = this.getAttribute('data-slide-index');
-    swiper.slideTo(slideIndex);
-    imageListItems.forEach(li => li.classList.remove('active'));
-    this.classList.add('active');
+imageListItems.forEach((item) => {
+  item.addEventListener("click", function () {
+    const slideIndex = this.getAttribute("data-slide-index");
+    swiperExamples.slideTo(slideIndex);
+    imageListItems.forEach((li) => li.classList.remove("active"));
+    this.classList.add("active");
+  });
+});
+
+const officeListItems = document.querySelectorAll(".office-list li");
+const officeSwiper = new Swiper(".office-slider", {
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  effect: "fade",
+  fadeEffect: {
+    crossFade: true,
+  },
+});
+
+officeListItems.forEach((item) => {
+  item.addEventListener("click", function () {
+    const slideIndex = this.getAttribute("data-slide-index");
+    officeSwiper.slideTo(slideIndex);
+    officeListItems.forEach((li) => li.classList.remove("active"));
+    this.classList.add("active");
   });
 });

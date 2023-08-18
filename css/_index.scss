@@ -310,14 +310,17 @@
       display: flex;
       justify-content: space-between;
       gap: 28px;
+
       ul {
         list-style-type: none;
         display: flex;
         flex-direction: column;
         gap: 30px;
+        width: max-content;
         li {
           cursor: pointer;
-          color: #A1A1A1;
+          width: max-content;
+          color: #a1a1a1;
           font-family: Lato;
           font-size: 14px;
           font-style: normal;
@@ -326,7 +329,7 @@
           letter-spacing: 0.56px;
           text-transform: uppercase;
         }
-        .active{
+        .active {
           color: $white;
         }
       }
@@ -404,11 +407,13 @@
   }
 }
 .ofice {
+  padding: 160px 0 140px 0;
   .holder {
+    position: relative;
     display: flex;
     gap: 32px;
     .titles {
-      width: 27%;
+      width: 30%;
       h2 {
         color: $headlines;
         font-size: 62px;
@@ -425,6 +430,57 @@
         }
         & span:nth-child(3) {
           text-align: right;
+        }
+      }
+    }
+    .office-list {
+      position: absolute;
+      z-index: 4;
+      right: 0px;
+      display: flex;
+      list-style-type: none;
+      bottom: 0px;
+      gap: 10px;
+      li {
+        font-family: Lato;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 128%; /* 17.92px */
+        letter-spacing: 0.56px;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+    }
+    .ofice-container {
+      width: 70%;
+      .office-slider {
+        .swiper-slide {
+          display: flex;
+          gap: 32px;
+          .text {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            gap: 10px;
+            padding-bottom: 60px;
+            h4 {
+              font-family: Lato;
+              font-size: 20px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: 134%; /* 26.8px */
+              text-transform: uppercase;
+            }
+            p {
+              /* Body_16_regular */
+              font-family: Lato;
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 128%; /* 20.48px */
+            }
+          }
         }
       }
     }
