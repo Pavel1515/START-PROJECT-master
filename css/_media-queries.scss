@@ -170,39 +170,51 @@
     .burger {
       display: block;
       width: 26px;
-      height: 2px;
-      background-color: white;
+      height: 26px;
       transform: translateY(-10px);
       transition: all ease .4s;
-      &::after {
-        content: "";
+       span{
         display: block;
-        width: 26px;
+        width: 100%;
         height: 2px;
         background-color: white;
-        transform: translateY(6px);
-      }
-      &::before {
-        content: "";
-        display: block;
-        width: 26px;
-        height: 2px;
-        background-color: white;
-        transform: translateY(-8px);
-      }
+
+        &:after{
+          content: '';
+          display: block;
+          width: 100%;
+          height: 2px;
+          background-color: white;
+           transform: translateY(14px);
+        }
+        &:before{
+          content: '';
+          display: block;
+          width: 100%;
+          height: 2px;
+          background-color: white;
+           transform: translateY(8px);
+
+        }
+       }
     }
     .active {
       background-color: #B7B5B5;
-      transform: rotate(45deg);
-      &::after{
-        display: none;
+      span{
+         &:after{
+          content: '';
+          display: block;
+          width: 100%;
+          height: 2px;
+          background-color: white;
+           transform: translateY(10px) rotate(-45deg);
+        }
+        &:before{
+          display: none;
+        }
+
       }
-      &::before{
-        // position: absolute;
-        // top: -10px;
-        background-color: #B7B5B5;
-        transform: rotate(90deg);
-      }
+    
     }
     .wrapper {
       height: 100%;
@@ -498,13 +510,4 @@
       }
     }
   }
-}
-
-footer .three_level div:nth-child(2) {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
-  gap: 2px;
 }

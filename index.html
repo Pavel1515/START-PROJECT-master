@@ -43,7 +43,9 @@
     <header>
       <div class="holder">
         <a href="/" class="logo"> </a>
-        <div class="burger"></div>
+        <div class="burger">
+          <span></span>
+        </div>
         <div class="wrapper">
           <nav>
             <ul
@@ -222,17 +224,32 @@
       <section class="examples">
         <div class="holder">
           <h2>We have the best selection of luxury real estate</h2>
-          <!-- Slider main container -->
-          <div class="swiper">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-              <!-- Slides -->
-              <div class="swiper-slide">Slide 1</div>
-              <div class="swiper-slide">Slide 2</div>
-              <div class="swiper-slide">Slide 3</div>
+          <div class='examples_container_slider'>
+            <ul class="image-list">
+              <li data-slide-index="0">Villas /</li>
+              <li data-slide-index="1">Penthouses /</li>
+              <li data-slide-index="2">Apartments /</li>
+              <li data-slide-index="2">Commercial real estate /</li>
+            </ul>
+            <!-- Slider main container -->
+            <div class="swiper examples-slider">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                  <img src="./img/examples/Apartment.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./img/examples/Commercial Real Estate.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./img/examples/Penthouse.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./img/examples/Villas.jpg" alt="" />
+                </div>
+              </div>
             </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
           </div>
         </div>
       </section>
@@ -362,7 +379,7 @@
           </div>
           <div class="servise">
             <h3>Our services</h3>
-            <ul >
+            <ul>
               <li><a href="">Construction</a></li>
               <li><a href="">Renovation and reconstruction</a></li>
               <li><a href="">Project management</a></li>

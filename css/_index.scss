@@ -63,8 +63,6 @@
       text-transform: uppercase;
       border: 1px solid $white;
     }
-    
- 
   }
 }
 .info {
@@ -125,8 +123,6 @@
       text-transform: uppercase;
       border-bottom: 1px solid $headlines;
     }
-   
- 
   }
 }
 .projects {
@@ -220,7 +216,6 @@
       border-bottom: 1px solid $headlines;
     }
   }
-
 }
 .about {
   margin-top: 140px;
@@ -300,18 +295,41 @@
   padding-bottom: 100px;
   .holder {
     display: flex;
-    justify-content: space-between;
+    gap: 60px;
     h2 {
-      max-width: 580px;
+      width: 50%;
       color: $white;
       font-size: 36px;
       font-style: normal;
       font-weight: 300;
-      line-height: 110%; /* 39.6px */
+      line-height: 110%;
       text-transform: uppercase;
     }
-    .swiper {
-      color: wheat;
+    .examples_container_slider {
+      width: 50%;
+      display: flex;
+      justify-content: space-between;
+      gap: 28px;
+      ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        li {
+          cursor: pointer;
+          color: #A1A1A1;
+          font-family: Lato;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 128%; /* 17.92px */
+          letter-spacing: 0.56px;
+          text-transform: uppercase;
+        }
+        .active{
+          color: $white;
+        }
+      }
     }
   }
 }
@@ -496,7 +514,6 @@
         font-weight: 400;
         line-height: 146%; /* 23.36px */
       }
-  
     }
     form {
       width: 432px;
@@ -514,11 +531,16 @@
         color: $white;
         border: none;
       }
+      input,
+      textarea {
+        border-bottom: 1px solid $headlines;
+      }
       .checkbox {
         display: flex;
         gap: 10px;
         input {
           border: 1px solid $headlines;
+          accent-color: #9b59b6;
         }
         p {
           color: #39393c;
@@ -563,12 +585,12 @@ footer {
     line-height: 134%;
     text-transform: uppercase;
   }
- 
+
   ul {
     padding-top: 30px;
     list-style-type: none;
     li {
-      margin-top: 16px;
+      margin-bottom: 16px;
     }
     a {
       color: #b7b5b5;
@@ -584,7 +606,7 @@ footer {
     padding-bottom: 60px;
     border-bottom: 1px solid #5e5e5e;
     display: grid;
-    grid-template-columns:repeat(5,1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 70px;
     .logo {
       margin-right: 148px;
@@ -598,7 +620,7 @@ footer {
   .two_level {
     padding-top: 60px;
     display: grid;
-    grid-template-columns:repeat(5,1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 70px;
     padding-bottom: 100px;
     border-bottom: 1px solid #ececec;
@@ -623,6 +645,7 @@ footer {
   .three_level {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding-top: 21px;
     padding-bottom: 40px;
     font-size: 14px;
@@ -630,8 +653,9 @@ footer {
     font-weight: 400;
     line-height: 140%;
     color: #b7b5b5;
-    & div:nth-child(2) {
+    .text_coping {
       display: flex;
+      justify-content: flex-end;
       align-items: center;
       gap: 30px;
     }
