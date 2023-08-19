@@ -6246,7 +6246,6 @@ $(document).ready(() => {
 
   // BURGER
   $("header .burger").click(() => {
-    $("header nav").slideToggle();
     $("header .burger").toggleClass("active");
   });
 
@@ -6266,11 +6265,11 @@ $(document).ready(() => {
 
   // FIXED HEADER
   $(window).scroll(function () {
-    if ($(document).width() > 1000) {
+   
       const top = $(document).scrollTop();
       if (top > 100) $("header").addClass("fixed-header");
       else $("header").removeClass("fixed-header");
-    }
+   
   });
 
   // SCROLL TO SECTION
@@ -6477,3 +6476,15 @@ officeListItems.forEach((item) => {
     this.classList.add("active");
   });
 });
+
+
+const oferSlider = new Swiper('.ofers-slider', {
+  slidesPerView: 3,
+  spaceBetween: 20,
+  loop: true,
+  navigation: {
+    nextEl: '.prev',
+    prevEl: '.next',
+  },
+});
+
